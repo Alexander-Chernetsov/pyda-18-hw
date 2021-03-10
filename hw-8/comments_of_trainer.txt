@@ -1,0 +1,13 @@
+В 3 задаче так же можно было использовать функцию sub и скобочные группы, чтобы не использовать цикл, например так:
+
+python
+def acronym(word):
+return re.sub(r"(\w)\w+\s?", r"\1", word).upper()
+
+А 6 задачу я бы реализовал так:
+
+python
+def get_correct_phone_number(number):
+pattern = r'\+?[87]*\s*\(?(\d{3})\)?\s*[+\-]?(\d{3})\s*[+\-]?(\d{2})\s*[+\-]?\s*(\d{2})'
+example = r'+7(\1)-\2-\3-\4'
+return re.sub(pattern, example, number)
